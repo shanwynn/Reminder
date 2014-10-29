@@ -9,20 +9,25 @@ BackboneTimer.Views = BackboneTimer.Views || {};
 
         template: JST['app/scripts/templates/reminder.ejs'],
 
-        tagName: 'div',
+        tagName: 'tr',
 
-        id: '',
+        events: {
+          'click .name': 'highlightName'
+        },
 
-        className: '',
+        highlightName: function (e) {
+          console.log('I clicked on name:', e);
+        },
 
-        events: {},
-
-        initialize: function () {
+        initialize: function (model) {
+            this.model = model;
             this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
+            console.log('render called in reminderView');
+            return this;
         }
 
     });

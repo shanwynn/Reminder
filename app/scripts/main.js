@@ -6,9 +6,12 @@ window.BackboneTimer = {
     Collections: {},
     Views: {},
     Routers: {},
+    Reminders: '',
     init: function () {
         'use strict';
-        console.log('Hello from Backbone!');
+        console.log('[Application Has Started]', 'Hello from Backbone!');
+        this.Reminders = new BackboneTimer.Collections.Reminders();
+        var app = new BackboneTimer.Views.Appview();
     }
 };
 

@@ -1,6 +1,12 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-
+$font-family: 'PT Sans Narrow', sans-serif;
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -24,6 +30,11 @@ body {
 }
 
 /* Custom page header */
+h1 {
+  font-family: $font-family;
+  font-size: 3em;
+}
+
 .header {
     border-bottom: 1px solid #e5e5e5;
 }
@@ -36,11 +47,34 @@ body {
     padding-bottom: 19px;
 }
 
+.side-content {
+  background-color: #4F0B38;
+  padding-top: 10px;
+  width: 325px;
+  height: 500px;
+  color: #ffffff;
+  @include border-radius(6px 0 0 6px);
+  overflow: auto;
+}
+
+.main-content  {
+  padding-top: 10px;
+  background-color: #A7A6B5;
+  width: 400px;
+  height: 500px;
+  @include border-radius(0 6px 6px 0);
+}
+
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
+    margin-top: 20px;
+    padding-top: 20px;
     color: #777;
     border-top: 1px solid #e5e5e5;
+}
+
+p {
+  margin-top: 10px;
 }
 
 .container-narrow > hr {
